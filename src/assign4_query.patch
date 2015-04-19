@@ -1,0 +1,22 @@
+diff --git a/assign4/src/edu/wisc/cs/sdn/simpledns/packet/DNS.java b/assign4/src/edu/wisc/cs/sdn/simpledns/packet/DNS.java
+index 141f35c..5fd424a 100644
+--- a/assign4/src/edu/wisc/cs/sdn/simpledns/packet/DNS.java
++++ b/assign4/src/edu/wisc/cs/sdn/simpledns/packet/DNS.java
+@@ -163,7 +163,7 @@ public class DNS
+ 		dns.id = bb.getShort();
+ 		
+ 		byte tmp = bb.get();
+-		dns.query = (((tmp & 0b10000000) >> 7) == 1);
++		dns.query = (((tmp & 0b10000000) >> 7) == 0);
+ 		dns.opcode = (byte)((tmp & 0b01111000) >> 3);
+ 		dns.authoritative = (((tmp & 0b00000100) >> 2) == 1);
+ 		dns.truncated = (((tmp & 0b00000010) >> 1) == 1);
+@@ -202,7 +202,7 @@ public class DNS
+ 		bb.putShort(this.id);
+ 		
+ 		byte tmp = 0;
+-		tmp |= (byte)(this.query ? (1 << 7) : 0);
++		tmp |= (byte)(this.query ? 0 : (1 << 7));
+ 		tmp |= (byte)(this.opcode << 3);
+ 		tmp |= (byte)(this.authoritative ? (1 << 2) : 0);
+ 		tmp |= (byte)(this.truncated ? (1 << 1) : 0);
