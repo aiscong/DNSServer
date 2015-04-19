@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
+<<<<<<< HEAD
+	<name>DNSServer</name>
+=======
 	<name>assign4</name>
+>>>>>>> 6d894316eb48c94149b89a706c185fa4a12f8051
 	<comment></comment>
 	<projects>
 	</projects>
